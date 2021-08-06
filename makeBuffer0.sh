@@ -1,6 +1,8 @@
+#!/bin/bash
+# written by sandw1ch
 # $1 name of the video
-# $2 output name of your buffer
-# $3 name of the logo to pull
+# $2 output name of your buffer file
+# $3 name of the logo file to duplicate to make the buffer file
 
 time=`ffprobe -i $1 -show_format -loglevel quiet|grep 'duration=' | cut -d'=' -f2`
 test=`echo $time/1|bc`

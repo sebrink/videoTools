@@ -1,3 +1,6 @@
+#!/bin/bash
+# written by sandw1ch
+# $1 = name of video to get length from.
 time=`ffprobe -i $1 -show_format -loglevel quiet|grep 'duration=' | cut -d'=' -f2`
 echo "[+] This video is $time seconds long."
 echo ""
