@@ -17,3 +17,20 @@ ffmpeg go brrr
 ### makeMusic.sh
 - Given a 30 second media file and a mp3 file, sync the audio to the media file. The new video is then cut back down to 30 seconds again. 
 - There are probably ways this breaks
+
+### newScript.sh (need to make it, these are instructions
+Step 1: loop file to greater than song length
+
+##### Loop file X amount of times. 
+ffmpeg -i grid.mp4 -c copy video.mkv
+duration 0x.flac
+ffmpeg -stream_loop 6 -i video.mkv -c copy input.mp4
+rm video.mkv
+
+Step 2: append song with shortest
+
+##### Give mp4 and .flac to get output mp4
+ffmpeg -i input.mp4 -i input.flac -filter_complex " [1:0] apad " -c:v copy -shortest output.mp4
+
+Step 3: Clip to original song length
+ffmpeg -i video.mp4 -ss 0 -to 164 -c copy tmp.mp4
