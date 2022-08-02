@@ -1,5 +1,5 @@
 # videoTools
-ffmpeg go brrr
+ffmpeg go brrr (just reviewed this in 2022, and pretty sure I was losing my mind when i wrote this)
 
 ### duration.sh
 - Given a single media file, you can see the duration and how long you have to make a clip for (in 30 second intervals).
